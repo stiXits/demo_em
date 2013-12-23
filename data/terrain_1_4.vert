@@ -17,7 +17,7 @@ void main()
     a_position = a_vertex;
     gl_Position = vec4(a_vertex, 1.0);
     gl_Position.y += 0.21;
-    gl_Position.y += texture(waterheights, a_vertex.xz+vec2(a_time)/3)/12;
+    gl_Position.y += texture(waterheights, a_vertex.xz+vec2(a_time)/3).a/12;
 
     a_height = gl_Position.y;
     gl_Position = transform * gl_Position;

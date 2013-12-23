@@ -12,7 +12,7 @@ layout (triangle_strip, max_vertices = 18) out;
 
 in vec3 a_position[];
 
-out int gl_Layer;
+//out int gl_Layer;
 out vec3 g_position;
 
 void main()

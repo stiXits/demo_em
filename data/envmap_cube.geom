@@ -11,7 +11,7 @@ layout (triangles) in;
 layout (triangle_strip, max_vertices = 18) out;
 
 out vec3 g_eye;
-out int gl_Layer;
+//out int gl_Layer;
 
 void main()
 {

@@ -19,7 +19,7 @@ out float g_height;
 out vec3 g_texelPosition;
 out vec3 g_normal;
 
-out int gl_Layer;
+//out int gl_Layer;
 
 void main()
 {

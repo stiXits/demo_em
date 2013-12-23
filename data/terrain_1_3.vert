@@ -28,7 +28,7 @@ void main()
 
     gl_Position = vec4(a_vertex, 1.0);
     a_texelPosition = a_vertex;
-    a_height = texture2D(height, gl_Position.xz + a_offset.xy);
+    a_height = texture2D(height, gl_Position.xz + a_offset.xy).a;
     gl_Position.y += a_height + a_offset.y;
     gl_Position = transform * gl_Position;
 
@@ -40,10 +40,10 @@ void main()
 
 	//
 
-	north.y = texture2D(height, north.xz + a_offset.xy);
-    east.y = texture2D(height, east.xz + a_offset.xy);
-    south.y = texture2D(height, south.xz + a_offset.xy);
-    west.y = texture2D(height, west.xz + a_offset.xy);
+	north.y = texture2D(height, north.xz + a_offset.xy).a;
+    east.y = texture2D(height, east.xz + a_offset.xy).a;
+    south.y = texture2D(height, south.xz + a_offset.xy).a;
+    west.y = texture2D(height, west.xz + a_offset.xy).a;
 	// Task_1_2 - ToDo End
 
 	a_normal = normalize(cross(north - south, east - west));

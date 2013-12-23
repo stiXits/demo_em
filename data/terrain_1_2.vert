@@ -21,7 +21,7 @@ void main()
 
 	// ...
     gl_Position = vec4(a_vertex, 1.0);
-    a_height = texture2D(height, gl_Position.xz + a_offset.xy * a_time *50);
+    a_height = texture2D(height, gl_Position.xz + a_offset.xy * a_time *50).r;
     gl_Position.y += a_height + a_offset.y;
     gl_Position = transform * gl_Position;
 	// Task_1_2 - ToDo End
