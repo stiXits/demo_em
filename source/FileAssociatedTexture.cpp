@@ -12,7 +12,7 @@
 
 QMap<QString, QImage> FileAssociatedTexture::s_imagesByFilePath;
 QMap<QString, GLuint> FileAssociatedTexture::s_texturesByFilePath;
-QMultiMap<QString, FileAssociatedTexture::CubeFaceOfTexture> 
+QMultiMap<QString, FileAssociatedTexture::CubeFaceOfTexture>
     FileAssociatedTexture::s_cubefacesByFilePath;
 
 QQueue<QString> FileAssociatedTexture::s_queue;
@@ -191,7 +191,7 @@ GLuint FileAssociatedTexture::loadTexture2D(
 		gl.glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, mag_filter);
 		gl.glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, min_filter);
 	}
-	
+
 	return loadTexture2D(texture, image, gl);
 }
 

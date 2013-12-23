@@ -4,7 +4,6 @@
 
 uniform mat4 transform;
 uniform sampler2D height;
-uniform vec3 a_offset;
 
 in vec3 a_vertex;
 
@@ -17,6 +16,7 @@ vec3 east;
 vec3 south;
 vec3 west;
 float space;
+vec3 a_offset = vec3(0.0, 0.0, 0.0);
 
 void main()
 {
@@ -28,9 +28,9 @@ void main()
 
     gl_Position = vec4(a_vertex, 1.0);
     a_texelPosition = a_vertex;
-    a_height = texture2D(height, gl_Position.xz + a_offset.xy);
+    a_height = texture2D(height, gl_Position.xz + a_offset.xz);
     gl_Position.y += a_height + a_offset.y;
-    gl_Position = transform * gl_Position;
+    //gl_Position = transform * gl_Position;
 
     space = 0.01;
     north = a_vertex - vec3(0.0, 0.0, space);

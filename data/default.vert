@@ -2,6 +2,7 @@
 
 uniform mat4 transform;
 
+
 in vec3 a_vertex;
 in vec3 a_normal;
 

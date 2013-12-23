@@ -10,8 +10,10 @@ uniform mat4 m_transforms;
 layout (triangles) in;
 layout (triangle_strip, max_vertices = 18) out;
 
-out vec3 g_eye;
+in vec3 a_position[];
+
 out int gl_Layer;
+out vec3 g_position;
 
 void main()
 {
@@ -27,18 +29,19 @@ void main()
 	// finish up each vertex with EmitVertex();
 	// and each primitive with EmitPrimitivie();
 
-
     for(int l = 0; l < 6; l++)
     {
         gl_Layer = l;
         for(int i = 0; i < gl_in.length(); i++)
         {
-           // g_eye = (pi * gl_in[i].gl_Position * fromTheInsideView[0]).xyz;
-            gl_Position = gl_in[i].gl_Position;
+            g_position = gl_in[i].gl_Position.xyz;
+            gl_Position = (p * fromTheInsideView[l]) * m_transforms * gl_in[i].gl_Position;
             EmitVertex();
         }
         EndPrimitive();
     }
+
 }
 
 // Task_2_3 - ToDo End
+

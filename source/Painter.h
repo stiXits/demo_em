@@ -23,7 +23,7 @@ public:
     virtual ~Painter();
 
     virtual bool initialize();
-    
+
     virtual void paint(float timef);
     virtual void resize(
         int width
@@ -33,6 +33,7 @@ public:
     virtual void update(const QList<QOpenGLShaderProgram *> & programs);
 
     void keyPressEvent(QKeyEvent * event);
+
 
 protected:
     void paint_1_1(float timef);
@@ -78,9 +79,9 @@ protected:
 
 protected:
     Camera * m_camera;
-    
+
     ScreenAlignedQuad * m_quad;
-    
+
     EnvironmentMapping m_mapping;
     QMap<EnvironmentMapping, GLuint> m_envmaps;
 
@@ -94,13 +95,14 @@ protected:
     QList<QOpenGLShader *> m_shaders;
 
     GLuint m_height;
+
     GLuint m_ground;
     GLuint m_caustics;
+    GLuint m_water;
 
     GLuint m_cubeFBO;
     GLuint m_cubeTex;
     GLuint m_cubeDepthRB;
-
 
     // ############
     // ToDo: Remove

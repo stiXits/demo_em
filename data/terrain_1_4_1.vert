@@ -4,7 +4,11 @@
 
 uniform mat4 transform;
 uniform sampler2D height;
-uniform vec3 a_offset;
+
+uniform mat4 v;
+uniform mat4 p;
+uniform mat4 vp;
+uniform mat4 m_transforms;
 
 in vec3 a_vertex;
 
@@ -17,6 +21,8 @@ vec3 east;
 vec3 south;
 vec3 west;
 float space;
+vec3 a_offset = vec3(0.0, 0.0, 0.0);
+mat4 viewProjection = v * p;
 
 void main()
 {
@@ -28,7 +34,7 @@ void main()
 
     gl_Position = vec4(a_vertex, 1.0);
     a_texelPosition = a_vertex;
-    a_height = texture2D(height, gl_Position.xz + a_offset.xy);
+    a_height = texture2D(height, gl_Position.xz + a_offset.xz);
     gl_Position.y += a_height + a_offset.y;
     gl_Position = transform * gl_Position;
 

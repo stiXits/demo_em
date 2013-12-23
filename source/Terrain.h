@@ -8,6 +8,7 @@
 
 #include "OpenGLFunctions.h"
 
+
 class Terrain
 {
 public:
@@ -31,4 +32,6 @@ private:
 
     QOpenGLBuffer m_vertices;
 	QOpenGLBuffer m_indices;
+	unsigned short m_size;
+	static unsigned int primitiveRestartIndex;
 };

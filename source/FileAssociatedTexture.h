@@ -24,13 +24,13 @@ public:
 	static GLuint getOrCreate2D(
 		const QString & fileName
     ,   OpenGLFunctions & gl
-	,	const GLenum wrap_s = GL_CLAMP
-	,	const GLenum wrap_t = GL_CLAMP
+	,	const GLenum wrap_s = GL_REPEAT
+	,	const GLenum wrap_t = GL_REPEAT
 	,	const GLenum mag_filter = GL_LINEAR
     ,   const GLenum min_filter = GL_LINEAR);
 
 	/** filePaths should contain a questionmark '?' that is replaced
-		by cubemap extensions 'px', 'nx', 'py', etc. 
+		by cubemap extensions 'px', 'nx', 'py', etc.
 		e.g. "resources/starmap?.png" points to "resources/starmap_px.png" etc.
 	*/
 	static GLuint getOrCreateCube(
@@ -86,7 +86,7 @@ private:
 protected:
     static QMap<QString, QImage> s_imagesByFilePath;
 	static QMap<QString, GLuint> s_texturesByFilePath;
-    
+
     struct CubeFaceOfTexture
     {
         GLuint texture;
