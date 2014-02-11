@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 cg2sandbox
 ==========
 
@@ -168,3 +169,9 @@ The following modifications where made in order to get things running. Note: the
 + set CL=/MP
 + set QMAKEPATH=C:/Qt/5.1.1.12/qtbase/bin
 + configure -opensource -confirm-license -nomake examples -nomake tests -opengl desktop -platform win32-msvc2013
+=======
+demo_em
+=======
+
+Environment Mapping Demo
+>>>>>>> master
